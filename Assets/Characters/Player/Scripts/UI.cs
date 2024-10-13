@@ -5,29 +5,28 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
     private Player_Health_System playerHealthSystem;
-    private GameObject healthBar;
     Slider healthBarSlider;
-
+    [SerializeField] GameObject PlayerhealthBar;
     void Start()
     {
         playerHealthSystem = GetComponent<Player_Health_System>(); // Ensure this is the correct GameObject
 
         // Find the child GameObject named "HealthBar" among all children
-        Transform healthBarTransform = null;
+        //Transform healthBarTransform = null;
 
-        foreach (Transform child in GetComponentsInChildren<Transform>())
-        {
-            if (child.name == "HealthBar")
-            {
-                healthBarTransform = child;
-                break; // Exit the loop once found
-            }
-        }
+        //foreach (Transform child in GetComponentsInChildren<Transform>())
+        //{
+        //    if (child.name == "HealthBar")
+        //    {
+        //        healthBarTransform = child;
+        //        break; // Exit the loop once found
+        //    }
+        //}
 
-        if (healthBarTransform != null)
+        if (PlayerhealthBar != null)
         {
             // Get the Slider component from the HealthBar GameObject
-            healthBarSlider = healthBarTransform.GetComponent<Slider>();
+            healthBarSlider = PlayerhealthBar.GetComponent<Slider>();
 
             if (healthBarSlider != null)
             {
