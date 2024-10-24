@@ -9,7 +9,8 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject PlayerhealthBar;
     void Start()
     {
-        playerHealthSystem = GetComponent<Player_Health_System>(); // Ensure this is the correct GameObject
+        
+        playerHealthSystem = GetComponent<Player_Health_System>(); 
 
         // Find the child GameObject named "HealthBar" among all children
         //Transform healthBarTransform = null;

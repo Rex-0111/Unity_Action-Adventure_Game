@@ -31,19 +31,31 @@ public class DodgeBack : MonoBehaviour
 
         TeleportBehindEnemy.StopAllCoroutines();
         isDodging = true;
+        playerAttacks.CanAttack = false;
         animator.StopPlayback();
         animator.Play("Avoid");
+        Invoke("canattacktrue", 1.1f);
+        Invoke("MakedodgeFalse",1.1f);
     }
-
+    void canattacktrue()
+    {
+        playerAttacks.CanAttack = true;
+    }
+    void MakedodgeFalse()
+    {
+        isDodging = false;
+    }
 
     private void Update()
     {
+        
         if (!isDodging) return;
 
         var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         if (stateInfo.IsName("Avoid"))
         {
-            animator.SetInteger("AttackPhases", 0);
+            
+          //  animator.SetInteger("AttackPhases", 0);
             playerAttacks.CanPlayerGetHit = stateInfo.normalizedTime >= .99f;
             if (stateInfo.normalizedTime < .99f && TeleportBehindEnemy.isTeleporting)
             {
@@ -53,6 +65,7 @@ public class DodgeBack : MonoBehaviour
             if (stateInfo.normalizedTime >= .99f)
             {
                 isDodging = false;
+                
                 animator.StopPlayback();
                 animator.Play("Idle_Walk_Run");
             }

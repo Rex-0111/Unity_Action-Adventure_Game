@@ -51,7 +51,7 @@ public class TeleportBehindEnemy : MonoBehaviour
     private void Teleport()
     {
         if (isTeleporting || playerAttacks.isEquipped) return;
-
+        playerAttacks.CanAttack = false;
         GameObject closestEnemy = DetectClosestEnemy();
         if (closestEnemy != null)
             StartCoroutine(TeleportBehind(closestEnemy));
@@ -69,6 +69,7 @@ public class TeleportBehindEnemy : MonoBehaviour
             yield return new WaitForSeconds(teleportDelay);
             katanaCollision.Buffs = 1;
             playerAttacks.CanPlayerGetHit = true;
+            playerAttacks.CanAttack = true;
             animator.Play("Idle_Walk_Run");
         }
         else
@@ -79,7 +80,7 @@ public class TeleportBehindEnemy : MonoBehaviour
     }
 
 
-    private GameObject DetectClosestEnemy()
+    public GameObject DetectClosestEnemy()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius);
         GameObject closestEnemy = null;

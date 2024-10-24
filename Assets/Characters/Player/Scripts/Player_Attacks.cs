@@ -25,7 +25,7 @@ public class Player_Attacks : MonoBehaviour
     private bool animationState03;
     private bool animationState04;
     private float animationsNormalizedTime;
-    public bool CanAttack { get; private set; }
+    public bool CanAttack;
     public bool CanPlayerGetHit;
     
     private void Awake()
