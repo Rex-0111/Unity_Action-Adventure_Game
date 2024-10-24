@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         Slider = GetComponent<Slider>();
-        EnemyDamage = GetComponentInParent<EnemyDamage>();
+        EnemyDamage = GetComponentInParent<EnemyDamage>(); 
     }
     void Update() => Slider.value  = EnemyDamage.Health / EnemyDamage.MaxHealth;
     
