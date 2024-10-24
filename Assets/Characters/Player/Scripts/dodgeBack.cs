@@ -27,15 +27,18 @@ public class DodgeBack : MonoBehaviour
 
     private void Dodge()
     {
-        if (isDodging || playerAttacks.isEquipped ) return;
-
-        TeleportBehindEnemy.StopAllCoroutines();
-        isDodging = true;
-        playerAttacks.CanAttack = false;
-        animator.StopPlayback();
-        animator.Play("Avoid");
-        Invoke("canattacktrue", 1.1f);
-        Invoke("MakedodgeFalse",1.1f);
+        if (isDodging || playerAttacks.isNotEquipped ) return;
+        if (!isDodging || !playerAttacks.isNotEquipped)
+        {
+           // animator.SetInteger("AttackPhases", 0);
+            TeleportBehindEnemy.StopAllCoroutines();
+            isDodging = true;
+            playerAttacks.CanAttack = false;
+            animator.StopPlayback();
+            animator.Play("Avoid");
+            Invoke("canattacktrue", 1.1f);
+            Invoke("MakedodgeFalse", 1.1f);
+        }
     }
     void canattacktrue()
     {

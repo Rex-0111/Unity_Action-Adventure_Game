@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Player_Attacks : MonoBehaviour
 {
-    public bool isEquipped;
+    public bool isNotEquipped;
     private IAA_Player inputActions;
     private Player_Locomotion locomotionScript;
     private Animator animator;
@@ -47,7 +47,7 @@ public class Player_Attacks : MonoBehaviour
     private void Start()
     {
         CanAttack = true;
-        isEquipped = true;
+        isNotEquipped = true;
         canAttackNext = true;
         animator = GetComponent<Animator>();
         attackPhaseId = Animator.StringToHash("AttackPhases");
@@ -131,7 +131,7 @@ public class Player_Attacks : MonoBehaviour
 
     private void AttackAction(InputAction.CallbackContext context)
     {
-        if ((CanAttack && !isEquipped) && canAttackNext)
+        if ((CanAttack && !isNotEquipped) && canAttackNext)
         {
             ++attackIncrement;
 
@@ -144,9 +144,9 @@ public class Player_Attacks : MonoBehaviour
     {
         if (canEquipUnequip)
         {
-            isEquipped = !isEquipped; // Toggle equipped state
-            animator.SetBool(equipWeaponId, !isEquipped);
-            animator.SetBool(unequipWeaponId, isEquipped);
+            isNotEquipped = !isNotEquipped; // Toggle equipped state
+            animator.SetBool(equipWeaponId, !isNotEquipped);
+            animator.SetBool(unequipWeaponId, isNotEquipped);
             StartCoroutine(ResetEquipUnequipFlags());
         }
     }

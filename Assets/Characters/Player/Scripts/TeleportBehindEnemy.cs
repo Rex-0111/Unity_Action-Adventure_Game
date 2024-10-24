@@ -50,11 +50,15 @@ public class TeleportBehindEnemy : MonoBehaviour
 
     private void Teleport()
     {
-        if (isTeleporting || playerAttacks.isEquipped) return;
-        playerAttacks.CanAttack = false;
+        if (isTeleporting || playerAttacks.isNotEquipped) return;
+        if (!isTeleporting || !playerAttacks.isNotEquipped)
+        {
+           // animator.SetInteger("AttackPhases", 0);
+            playerAttacks.CanAttack = false;
         GameObject closestEnemy = DetectClosestEnemy();
         if (closestEnemy != null)
             StartCoroutine(TeleportBehind(closestEnemy));
+        }
     }
 
     private IEnumerator TeleportBehind(GameObject enemy)

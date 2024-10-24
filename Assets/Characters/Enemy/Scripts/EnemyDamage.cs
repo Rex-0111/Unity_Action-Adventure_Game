@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    [Range(0, 100)] [SerializeField]private float Health = 100;
+    [SerializeField] public float MaxHealth;
+    [SerializeField] public float Health;
     private KatanaCollisionHandle katanaCollisionHandle;
     private Animator animator;
     private new Collider collider;
@@ -12,7 +13,7 @@ public class EnemyDamage : MonoBehaviour
 
     private void Start()
     {
-        
+        Health = MaxHealth;
         
         collider = GetComponent<Collider>();
         animator = GetComponent<Animator>();
@@ -28,7 +29,7 @@ public class EnemyDamage : MonoBehaviour
     public void Damage(float damageValue)
     {
         Health -= damageValue;
-        Health = Mathf.Clamp(Health, 0, 100);
+        Health = Mathf.Clamp(Health, 0, MaxHealth);
     
         
         if (Health <= 0)
