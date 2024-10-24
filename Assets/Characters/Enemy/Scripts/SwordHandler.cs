@@ -5,7 +5,7 @@ public class SwordHandler : MonoBehaviour
     [SerializeField] private Collider EnemyweaponCollider;
     [SerializeField] MeshRenderer MR_SheatheWeapon;
     [SerializeField] MeshRenderer MR_EquipWeapon;
-
+    public float DamegeToPlayer;
     private void Start()
     {
         // Try to get the Collider if not assigned via Inspector

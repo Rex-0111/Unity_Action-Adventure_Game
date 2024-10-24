@@ -23,7 +23,7 @@ public class Player_Health_System : MonoBehaviour
         EnemySword = GameObject.FindWithTag("EnemySword");
         EnemyKatanaCollisionHandle = EnemySword.GetComponent<EnemyKatanaCollisionHandle>();
         animator = GetComponent<Animator>();
-        maxHealth = 100f;
+        maxHealth = 1000f;
         Collider = GetComponent<Collider>();
         CurrentHealth = maxHealth;
         

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,7 +9,7 @@ public class Enemy_Locomotion : MonoBehaviour
     private EnemyAI_And_StateManager stateManager;
     private Animator animator;
     private NavMeshAgent agent;
-    
+   
 
     [SerializeField] private Vector3[] Petrolling_Positions;
     private int Petrolling_Position_Index;
@@ -122,6 +123,7 @@ public class Enemy_Locomotion : MonoBehaviour
 
     private void HandleAttackState()
     {
+        
         Attack();
     }
 
@@ -142,14 +144,16 @@ public class Enemy_Locomotion : MonoBehaviour
         {
             agent.speed = 0; // Stop moving during the attack animation
             animator.SetFloat(SpeedId, agent.speed);
-            this.gameObject.transform.LookAt(Player.transform.position);
+            
         }
 
         if (IsAnimationComplete("Enemy_Attack01") || IsAnimationComplete("Enemy_Attack02"))
         {
+           
             isAttacking = false;
             PlayAnimation(Idle_Walk_Run_ID);
             // Transition back to chasing
+            this.gameObject.transform.LookAt(Player.transform.position);
         }
         else if (stateManager.CurrentState == EnemyAI_And_StateManager.States.Chasing_State)
         {

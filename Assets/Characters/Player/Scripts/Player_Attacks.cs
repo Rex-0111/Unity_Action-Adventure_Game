@@ -26,9 +26,11 @@ public class Player_Attacks : MonoBehaviour
     private bool animationState04;
     private float animationsNormalizedTime;
     public bool CanAttack { get; private set; }
-
+    public bool CanPlayerGetHit;
+    
     private void Awake()
     {
+        CanPlayerGetHit = true;
         inputActions = new IAA_Player();
     }
 
@@ -76,8 +78,7 @@ public class Player_Attacks : MonoBehaviour
 
     private void EquipUnequipManage()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Equip") ||
-            animator.GetCurrentAnimatorStateInfo(0).IsName("UnEquip"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Equip") || animator.GetCurrentAnimatorStateInfo(0).IsName("UnEquip") || animator.GetCurrentAnimatorStateInfo(0).IsName("Teleport_Attack") || animator.GetCurrentAnimatorStateInfo(0).IsName("Avoid"))
         {
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
             {
