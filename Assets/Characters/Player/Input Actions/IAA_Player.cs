@@ -49,7 +49,7 @@ public partial class @IAA_Player: IInputActionCollection2, IDisposable
                     ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""6c2ab1b8-8984-453a-af3d-a3c78ae1679a"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -130,6 +130,15 @@ public partial class @IAA_Player: IInputActionCollection2, IDisposable
                     ""name"": ""Teleport"",
                     ""type"": ""Button"",
                     ""id"": ""498ebb4b-94cb-43f8-8685-f219f44b98c6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeMaterial"",
+                    ""type"": ""Button"",
+                    ""id"": ""8df5a67f-ae76-4cdf-9f74-0ac3c4d3f21b"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -552,6 +561,17 @@ public partial class @IAA_Player: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Teleport"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""540b4aa1-04e4-4339-acab-146025624b42"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""ChangeMaterial"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1151,6 +1171,7 @@ public partial class @IAA_Player: IInputActionCollection2, IDisposable
         m_Player_Walk = m_Player.FindAction("Walk", throwIfNotFound: true);
         m_Player_EquipWeapon = m_Player.FindAction("EquipWeapon", throwIfNotFound: true);
         m_Player_Teleport = m_Player.FindAction("Teleport", throwIfNotFound: true);
+        m_Player_ChangeMaterial = m_Player.FindAction("ChangeMaterial", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1242,6 +1263,7 @@ public partial class @IAA_Player: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Walk;
     private readonly InputAction m_Player_EquipWeapon;
     private readonly InputAction m_Player_Teleport;
+    private readonly InputAction m_Player_ChangeMaterial;
     public struct PlayerActions
     {
         private @IAA_Player m_Wrapper;
@@ -1258,6 +1280,7 @@ public partial class @IAA_Player: IInputActionCollection2, IDisposable
         public InputAction @Walk => m_Wrapper.m_Player_Walk;
         public InputAction @EquipWeapon => m_Wrapper.m_Player_EquipWeapon;
         public InputAction @Teleport => m_Wrapper.m_Player_Teleport;
+        public InputAction @ChangeMaterial => m_Wrapper.m_Player_ChangeMaterial;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1303,6 +1326,9 @@ public partial class @IAA_Player: IInputActionCollection2, IDisposable
             @Teleport.started += instance.OnTeleport;
             @Teleport.performed += instance.OnTeleport;
             @Teleport.canceled += instance.OnTeleport;
+            @ChangeMaterial.started += instance.OnChangeMaterial;
+            @ChangeMaterial.performed += instance.OnChangeMaterial;
+            @ChangeMaterial.canceled += instance.OnChangeMaterial;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1343,6 +1369,9 @@ public partial class @IAA_Player: IInputActionCollection2, IDisposable
             @Teleport.started -= instance.OnTeleport;
             @Teleport.performed -= instance.OnTeleport;
             @Teleport.canceled -= instance.OnTeleport;
+            @ChangeMaterial.started -= instance.OnChangeMaterial;
+            @ChangeMaterial.performed -= instance.OnChangeMaterial;
+            @ChangeMaterial.canceled -= instance.OnChangeMaterial;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1537,6 +1566,7 @@ public partial class @IAA_Player: IInputActionCollection2, IDisposable
         void OnWalk(InputAction.CallbackContext context);
         void OnEquipWeapon(InputAction.CallbackContext context);
         void OnTeleport(InputAction.CallbackContext context);
+        void OnChangeMaterial(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -27,7 +27,7 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -108,6 +108,15 @@
                     "name": "Teleport",
                     "type": "Button",
                     "id": "498ebb4b-94cb-43f8-8685-f219f44b98c6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeMaterial",
+                    "type": "Button",
+                    "id": "8df5a67f-ae76-4cdf-9f74-0ac3c4d3f21b",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -530,6 +539,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Teleport",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "540b4aa1-04e4-4339-acab-146025624b42",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ChangeMaterial",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
