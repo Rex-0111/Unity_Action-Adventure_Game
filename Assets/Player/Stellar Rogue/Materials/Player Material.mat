@@ -188,7 +188,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 1.5365744
+    - _Height: 3
     - _Metallic: 0
     - _Metallic_Strength: 10
     - _Microdetail_Size: 32

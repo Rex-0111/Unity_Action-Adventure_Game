@@ -448,7 +448,7 @@ MonoBehaviour:
   - {fileID: 114780028408030698}
   - {fileID: 114063133802684794}
   dataType: 0
-  capacity: 99999
+  capacity: 999
   stripCapacity: 16
   particlePerStripCount: 16
   needsComputeBounds: 0
@@ -2457,7 +2457,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 1.18
     m_Space: -1
   m_Property:
     name: Intensity
@@ -2491,7 +2491,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0.65
     m_Space: -1
   m_Property:
     name: Drag
@@ -8128,7 +8128,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 8.52
+      m_SerializableObject: 1
     m_Space: -1
   m_Property:
     name: frequency

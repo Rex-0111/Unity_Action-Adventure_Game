@@ -2141,7 +2141,6 @@ MonoBehaviour:
   SpawnEffect: 1
   DeSpawnEffect: 0
   material: {fileID: 2100000, guid: 14968ece4aa44ad4e83e43d3f1cd0dd0, type: 2}
-  MaterialHeightValue: 0
 --- !u!137 &1017875813 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7803095554113295778, guid: 076cf052967317542928e1485a8602ca, type: 3}
@@ -3894,6 +3893,18 @@ MonoBehaviour:
   hologramMaterial:
   - {fileID: 2100000, guid: 14968ece4aa44ad4e83e43d3f1cd0dd0, type: 2}
   - {fileID: -876546973899608171, guid: f3661ea239ef73b4aa5a3fa310e595e6, type: 3}
+--- !u!114 &2131807620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590905732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1834079607fee04cb16e3d48fdaba95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4643959999392660208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4073,7 +4084,7 @@ PrefabInstance:
       addedObject: {fileID: 304464344}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8269552120299506182, guid: 076cf052967317542928e1485a8602ca, type: 3}
-      insertIndex: -1
+      insertIndex: 4
       addedObject: {fileID: 2131807591}
     - targetCorrespondingSourceObject: {fileID: 8269552120299506182, guid: 076cf052967317542928e1485a8602ca, type: 3}
       insertIndex: -1
@@ -4087,6 +4098,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8269552120299506182, guid: 076cf052967317542928e1485a8602ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2131807613}
+    - targetCorrespondingSourceObject: {fileID: 8269552120299506182, guid: 076cf052967317542928e1485a8602ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2131807620}
     - targetCorrespondingSourceObject: {fileID: 3376396021932268465, guid: 076cf052967317542928e1485a8602ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 393750509}
