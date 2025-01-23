@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.VFX;
+
 public class Particle_Spawn_Despawn : MonoBehaviour
 {
     private DissolveObjectPlayer _DissolveObjectPlayer;
