@@ -5,7 +5,6 @@ using UnityEngine.VFX;
 public class Particle_Spawn_Despawn : MonoBehaviour
 {
     private DissolveObjectPlayer _DissolveObjectPlayer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private float Value;
     private VisualEffect vfx;
     DissolveObjectPlayer dissolveObjectPlayer;
@@ -17,7 +16,6 @@ public class Particle_Spawn_Despawn : MonoBehaviour
         dissolveObjectPlayer.Spawn += ParticlePlay;
         dissolveObjectPlayer.DeSpawn += ParticleStop;
     }
-
     private void ParticleStop()
     {
         vfx.Stop();
@@ -27,6 +25,4 @@ public class Particle_Spawn_Despawn : MonoBehaviour
     {
         vfx.Play();
     }
-
-    
 }
