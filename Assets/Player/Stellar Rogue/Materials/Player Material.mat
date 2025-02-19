@@ -166,7 +166,7 @@ Material:
     - _Blur_8: 0
     - _Blur_9: 0
     - _BumpScale: 1
-    - _ColorBlend: 0.008170819
+    - _ColorBlend: -0.24064751
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 0
     - _CullModeForward: 0
