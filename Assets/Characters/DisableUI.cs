@@ -7,7 +7,7 @@ public class DisableUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("DisableCanvas",5f); 
+        Invoke("DisableCanvas",5f);
     }
 
     void DisableCanvas()
