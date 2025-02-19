@@ -21,9 +21,12 @@ public class Player_Locomotion : MonoBehaviour
     float targetspeed;
     float currentVelocity;
     float smoothTime;
+    bool Grounded;
+
 
     private void Awake()
     {
+      
         canMove = true;
         smoothTime = 7f;
         inputActions = new IAA_Player();
@@ -42,6 +45,7 @@ public class Player_Locomotion : MonoBehaviour
     }
     private void Start()
     {
+       
         AnimationID();
     }
 
@@ -63,11 +67,11 @@ public class Player_Locomotion : MonoBehaviour
 
     private void Falling()
     {
-        if (!characterController.isGrounded)
+        if (!Grounded)
         {
             animator.SetBool(FallingId, true);
         }
-        if (characterController.isGrounded)
+        if (Grounded)
         {
             animator.SetBool(FallingId, false);
         }
@@ -115,6 +119,21 @@ public class Player_Locomotion : MonoBehaviour
 
         // Handle idle, run, and sprint states
         IdleRunSprint(input);
+        //
+        
+        
+        //Debug.Log(characterController.isGrounded);
+
+        // Ground check
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
+        {   
+            Grounded = true;
+        }
+        else
+        {
+            Grounded = false;
+        }
     }
 
 

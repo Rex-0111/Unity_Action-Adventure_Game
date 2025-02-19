@@ -43,6 +43,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Layer_94E93E18:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_C8ADA833:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseColor_Map:
         m_Texture: {fileID: 2800000, guid: 28939d9ac1f276846a93754baecb6bb2, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -138,7 +146,7 @@ Material:
     - _ADD_MICRODETAIL: 0
     - _AO_Strength: 1.25
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 13.48
+    - _Alpha: 1
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
@@ -158,6 +166,7 @@ Material:
     - _Blur_8: 0
     - _Blur_9: 0
     - _BumpScale: 1
+    - _ColorBlend: -0.24064751
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 0
     - _CullModeForward: 0
@@ -188,7 +197,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 3
+    - _Height: 25.8
     - _Metallic: 0
     - _Metallic_Strength: 10
     - _Microdetail_Size: 32
@@ -265,6 +274,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     - _alpha: 7.18
+    - _opa: 0
     m_Colors:
     - _1_Blood_Color: {r: 1, g: 0, b: 0.0666666, a: 1}
     - _1_Dirt_Color: {r: 0.9529411, g: 0.9058824, b: 0.8627451, a: 0}
